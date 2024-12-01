@@ -2,7 +2,7 @@ import IconTitle from '@/components/common/IconTitle';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'Components/IconTitle',
+  title: 'Components/Common/IconTitle',
   component: IconTitle,
 } satisfies Meta<typeof IconTitle>;
 export default meta;

@@ -3,7 +3,7 @@ import { Container } from '@radix-ui/themes';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'Components/RoundBox',
+  title: 'Components/Common/RoundBox',
   component: RoundBox,
   render: (Story) => (
     <Container className="h-svh bg-slate-500">

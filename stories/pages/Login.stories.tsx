@@ -3,7 +3,7 @@ import Login from '@/app/login/page';
 import Layout from '@/app/login/layout';
 
 const meta = {
-  title: 'Components/Login',
+  title: 'Pages/Login',
   component: Login,
   decorators: (Story) => (
     <Layout>

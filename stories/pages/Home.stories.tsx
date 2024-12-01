@@ -2,7 +2,7 @@ import Home from '@/app/page';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'Components/App',
+  title: 'Pages/App',
   component: Home,
 } satisfies Meta<typeof Home>;
 export default meta;
