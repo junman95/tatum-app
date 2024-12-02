@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ManageLayout from '@/app/manage/layout';
+import ManageLayout from '@/app/(manage)/layout';
 
 const meta = {
   title: 'Layouts/ManageLayout',
