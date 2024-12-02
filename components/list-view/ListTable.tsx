@@ -50,7 +50,7 @@ const ListTable = <T extends { [key: string]: string }>({
   };
 
   return (
-    <Table.Root className="h-full">
+    <Table.Root className="absolute h-full w-full">
       <Table.Header className="sticky top-0 bg-white border-b-2 border-b-black">
         <Table.Row>
           {columns.map((column) => (
