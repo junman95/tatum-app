@@ -5,17 +5,10 @@ type Props = {
   name: string;
   label: string;
   options: string[];
-  required?: boolean;
   customMatch?: { fn: (value: string) => boolean; description: string };
 };
 
-const FormDropdownField = ({
-  name,
-  label,
-  options,
-  required,
-  customMatch,
-}: Props) => {
+const FormDropdownField = ({ name, label, options, customMatch }: Props) => {
   return (
     <Form.Field className="mb-2.5 grid" name="userEmail">
       <div className="flex items-baseline justify-between">

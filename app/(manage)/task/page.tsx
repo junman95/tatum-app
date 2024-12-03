@@ -3,7 +3,7 @@ import CreationDialog from '@/components/create-dialog/CreationDialog';
 import TaskForm from '@/components/create-dialog/TaskForm';
 import ListTable from '@/components/list-view/ListTable';
 import { getTasks } from '@/lib/task/tasks';
-import { Box, Button, Dialog, Flex } from '@radix-ui/themes';
+import { Button, Dialog, Flex } from '@radix-ui/themes';
 
 export default function Page() {
   const tasks = getTasks('Admin');
