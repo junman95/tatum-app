@@ -33,6 +33,10 @@ const getUsers = (role: UserRole) => {
   throw new Error('Invalid role');
 };
 
+const getUserNames = () => {
+  return users.map((user) => user.userName);
+};
+
 const getUser = (query: {
   type: 'userName' | 'userPhone' | 'userEmail';
   value: string;
@@ -47,4 +51,4 @@ const getUser = (query: {
   return user;
 };
 
-export { getUsers, getUser };
+export { getUsers, getUserNames, getUser };
