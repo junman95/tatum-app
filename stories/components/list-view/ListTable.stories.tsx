@@ -1,6 +1,6 @@
 import ListTable from '@/components/list-view/ListTable';
 import type { Meta, StoryObj } from '@storybook/react';
-import tasks from '@/data/task_list.json';
+import tasks from '@/data/task_list';
 import Task from '@/types/task';
 
 const meta = {

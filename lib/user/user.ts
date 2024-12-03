@@ -1,4 +1,4 @@
-import users from '@/data/user_list.json';
+import users from '@/data/user_list';
 import User, { UserRole } from '@/types/user';
 
 const userTypeGuard = (data: object): data is User[] => {
