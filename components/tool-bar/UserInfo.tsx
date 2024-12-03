@@ -4,15 +4,18 @@ import Image from 'next/image';
 
 const UserInfo = async () => {
   const cookieStore = await cookies();
-  const user = cookieStore.get('user');
+  const userName = cookieStore.get('userName');
+  const userRole = cookieStore.get('userRole');
 
-  if (!user) {
+  if (!userName || !userRole) {
     throw new Error('User not found');
   }
   return (
-    <Flex align="center" gap="2">
-      <Image src="/icons/user.svg" alt="user" height={20} width={20} />
-      <Text aria-label="users">{user.value}</Text>
+    <Flex align="center" gap="2" className="text-green-500 font-semibold">
+      <Text aria-label="user-name">{userName.value}</Text>
+      <Text aria-label="user-role">{userRole.value}</Text>
+
+      <Image src="/icons/user.svg" alt="user" height={18} width={18} />
     </Flex>
   );
 };
