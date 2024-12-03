@@ -3,21 +3,29 @@ import CreationDialog from '@/components/create-dialog/CreationDialog';
 import TaskForm from '@/components/create-dialog/TaskForm';
 import ListTable from '@/components/list-view/ListTable';
 import { getTasks } from '@/lib/task/tasks';
+import { UserRole } from '@/types/user';
 import { Button, Dialog, Flex } from '@radix-ui/themes';
+import { cookies } from 'next/headers';
 
-export default function Page() {
-  const tasks = getTasks('Admin');
+export default async function Page() {
+  const cookieStore = await cookies();
+  const userRole = cookieStore.get('userRole');
+  const tasks = getTasks((userRole?.value as UserRole) || 'RegularUser');
 
   return (
     <Flex
       direction="column"
-      gap="5"
+      gap="2"
       align="start"
-      className="border-box overflow-hidden h-full w-full"
+      className="relative  h-full w-full"
     >
-      <Flex gap="5">
-        <Dropdown name="filterMenu" options={['1', '2']} />
-        <CreationDialog>
+      <Flex gap="5" className="relative">
+        <Dropdown
+          name="filterMenu"
+          options={['User Name', 'User Email', 'User Phone']}
+        />
+
+        <CreationDialog label="Create Task">
           <TaskForm>
             <Dialog.Close>
               <Button>close</Button>
