@@ -15,7 +15,7 @@ const UserInfo = async () => {
       <Text aria-label="user-name">{userName.value}</Text>
       <Text aria-label="user-role">{userRole.value}</Text>
 
-      <Image src="/icons/user.svg" alt="user" height={18} width={18} />
+      <Image src="/icons/user-black.svg" alt="user" height={18} width={18} />
     </Flex>
   );
 };

@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <Flex className="absolute h-screen w-screen overflow-hidden">
+    <Flex className="absolute h-screen w-screen overflow-auto">
       <Box
         id="side-bar"
         className="flex-shrink-0 relative bg-teal-500 w-[120px] transition-all pt-[70px]"
@@ -38,14 +38,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </Link>
         </button>
       </Box>
-      <Flex className="relative grow h-full p-5" gap="4" direction="column">
-        <Flex justify="between" className="flex-shrink-0 h-10 bg-amber-400">
+      <Flex
+        className="h-full w-full p-5 overflow-auto"
+        gap="4"
+        direction="column"
+      >
+        <Flex justify="between" className="flex-shrink-0 px-5">
           <PageTitle />
           <UserInfo />
         </Flex>
-        <Box className="relative h-full border-box bg-amber-500">
-          {children}
-        </Box>
+        <Box className="h-[90%]">{children}</Box>
       </Flex>
     </Flex>
   );

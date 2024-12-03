@@ -5,8 +5,8 @@ import { OrderStatus } from '@/types/listView';
 import { filterItemsByOrder } from '@/lib/localFilter';
 import { useState } from 'react';
 
-type Props<T> = {
-  data: T[];
+type Props = {
+  data: { [key in string]: string }[];
 };
 
 const getColumnList = (data: { [key: string]: string }) => {
@@ -19,9 +19,7 @@ const nextSortStatus: Record<OrderStatus, OrderStatus> = {
   none: 'asc',
 };
 
-const ListTable = <T extends { [key: string]: string }>({
-  data,
-}: Props<T>) => {
+const ListTable = ({ data }: Props) => {
   const columns = getColumnList(data[0]);
   const [listItems, setListItems] = useState(data);
   const [orderInfo, setOrderInfo] = useState<{
@@ -50,7 +48,7 @@ const ListTable = <T extends { [key: string]: string }>({
   };
 
   return (
-    <Table.Root className="absolute h-full w-full">
+    <Table.Root className="h-full w-full">
       <Table.Header className="sticky top-0 bg-white border-b-2 border-b-black">
         <Table.Row>
           {columns.map((column) => (

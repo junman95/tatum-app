@@ -11,18 +11,18 @@ const ExpandButton = ({ id }: Props) => {
   const [isExpanded, setIsExpanded] = useState(false);
   return (
     <button
-      className="z-10 bg-teal-300 text-white absolute top-10 right-[-10px] rounded-full overflow-auto"
+      className="h-5 w-5 z-10 bg-teal-300 text-white absolute top-10 right-[-10px] rounded-full overflow-auto"
       onClick={() => {
         const sidebar = document.querySelector(`#${id}`);
         if (sidebar) {
           sidebar.classList.toggle('w-[120px]');
-          sidebar.classList.toggle('w-[40px]');
+          sidebar.classList.toggle('w-[20px]');
           setIsExpanded((prev) => !prev);
         }
       }}
     >
       <Image
-        className={`${isExpanded ? 'rotate-180' : ''}`}
+        className={`${isExpanded ? '' : 'rotate-180'}`}
         src="/icons/arrow-right.svg"
         width={20}
         height={20}

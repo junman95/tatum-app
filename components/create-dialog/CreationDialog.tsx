@@ -7,6 +7,7 @@ type Props = {
 const CreationDialog = ({ children }: Props) => {
   return (
     <Dialog.Root>
+      <Dialog.Title />
       <Dialog.Trigger>
         <Button>click</Button>
       </Dialog.Trigger>
