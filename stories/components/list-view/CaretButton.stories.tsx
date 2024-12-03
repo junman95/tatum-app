@@ -12,21 +12,24 @@ type Story = StoryObj<typeof meta>;
 
 export const Default = {
   args: {
+    orderStatus: 'asc',
     label: 'TaskName',
-    setSortStatus: () => {},
-    sortStatus: 'none',
     onClick: () => {
       console.log('clicked');
     },
   },
   render: (props) => {
-    const [sortStatus, setSortStatus] = React.useState(props.sortStatus);
+    const [orderStatus, setOrderStatus] = React.useState(props.orderStatus);
     return (
       <CaretButton
-        sortStatus={sortStatus}
-        setSortStatus={setSortStatus}
+        orderStatus={orderStatus}
+        onClick={() => {
+          if (props.onClick) {
+            props.onClick();
+          }
+          setOrderStatus(orderStatus === 'asc' ? 'desc' : 'asc');
+        }}
         label={props.label}
-        onClick={props.onClick}
       />
     );
   },
