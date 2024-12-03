@@ -4,6 +4,7 @@ import { Button, Dialog, Flex } from '@radix-ui/themes';
 import { getUserNames } from '@/lib/user/user';
 import TaskDropdownField from './TaskDropdownField';
 import { TaskTypeEnum } from '@/types/task';
+import { validateDueDate } from '@/lib/util/validate';
 
 // 오직 Dialog.Close만을 children으로 받는다.
 type Props = {
@@ -12,13 +13,6 @@ type Props = {
 
 const TaskForm = ({ children }: Props) => {
   const userNames = getUserNames();
-  const validateDueDate = (value: unknown) => {
-    if (typeof value !== 'string') {
-      return false;
-    }
-    const date = new Date(value);
-    return date && date.getTime() > Date.now();
-  };
 
   return (
     <Form.Root>
