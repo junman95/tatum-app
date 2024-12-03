@@ -1,5 +1,6 @@
 import IconTitle from '@/components/common/IconTitle';
 import RoundBox from '@/components/common/RoundBox';
+import login from '@/lib/user/action/login';
 import * as Form from '@radix-ui/react-form';
 import { Box, Button, Flex, Text } from '@radix-ui/themes';
 import Image from 'next/image';
@@ -11,8 +12,8 @@ export default function Page() {
         image={{ src: 'icons/enter.svg', alt: 'Enter' }}
         title="로그인"
       />
-      <Form.Root>
-        <Form.Field className="mb-2.5 grid" name="email">
+      <Form.Root action={login}>
+        <Form.Field className="mb-2.5 grid" name="userEmail">
           <div className="flex items-baseline justify-between">
             <Form.Label className="text-[13px] font-semibold leading-[25px]">
               이메일
@@ -34,6 +35,8 @@ export default function Page() {
             <input
               className="box-border inline-flex h-[35px] w-full items-center justify-center rounded bg-blackA2 px-2.5 text-[15px] leading-none shadow-[0_0_0_1px] shadow-blackA6 outline-none selection:bg-blackA6 hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black]"
               type="email"
+              id="email"
+              name="userEmail"
               required
               placeholder="이메일 주소를 입력해 주세요."
             />
@@ -55,6 +58,8 @@ export default function Page() {
             <input
               className="box-border inline-flex h-[35px] w-full items-center justify-center rounded bg-blackA2 px-2.5 text-[15px] leading-none shadow-[0_0_0_1px] shadow-blackA6 outline-none selection:bg-blackA6 hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black]"
               type="password"
+              id="password"
+              name="userPassword"
               required
               placeholder="비밀번호를 입력해 주세요."
             />
