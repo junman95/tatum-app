@@ -11,7 +11,7 @@ enum CommonError {
 const getErrorMessage = (error: Error) => {
   const errorMessages = {
     [CommonError.Default]: {
-      title: `에러 발생: ${error.message}`,
+      title: `에러 발생: 관리자에게 문의하세요.`,
       message: '2초 뒤 로그인 화면으로 이동합니다.',
     },
     [CommonError.UserNotFound]: {

@@ -8,7 +8,7 @@ export default function Home() {
 
   useEffect(() => {
     setTimeout(() => {
-      router.push('/task');
+      router.push('/login');
     }, 2000);
   }, []);
 
@@ -23,7 +23,7 @@ export default function Home() {
       <Heading size="6">
         안녕하세요. 최준만 - 과제 전형 배포 사이트 입니다.
       </Heading>
-      <Heading size="5">2초 뒤 Task 페이지로 이동합니다.</Heading>
+      <Heading size="5">2초 뒤 login 페이지로 이동합니다.</Heading>
     </Flex>
   );
 }
