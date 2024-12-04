@@ -5,6 +5,7 @@ import { getUserNames } from '@/lib/user/user';
 import TaskDropdownField from './TaskDropdownField';
 import { TaskTypeEnum } from '@/types/task';
 import { validateDueDate } from '@/lib/util/validate';
+import { createTask } from '@/lib/task/tasks';
 
 // 오직 Dialog.Close만을 children으로 받는다.
 type Props = {
@@ -15,7 +16,7 @@ const TaskForm = ({ children }: Props) => {
   const userNames = getUserNames();
 
   return (
-    <Form.Root>
+    <Form.Root action={createTask}>
       <Flex direction="column" gap="4">
         <TaskFormField label="생성자" name="reporter" placeholder="박수철" />
         <TaskFormField label="Task Name" name="taskName" />
