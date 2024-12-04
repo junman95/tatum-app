@@ -34,13 +34,11 @@ export default function Error({
   const router = useRouter();
   const { title, message } = getErrorMessage(error);
   useEffect(() => {
-    if (error.message === CommonError.UserNotFound) {
-      new Promise(() => {
-        setTimeout(() => {
-          router.push('/login');
-        }, 2000);
-      });
-    }
+    new Promise(() => {
+      setTimeout(() => {
+        router.push('/login');
+      }, 2000);
+    });
   }, [error, router]);
 
   return (
