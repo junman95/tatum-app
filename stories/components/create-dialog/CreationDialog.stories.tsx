@@ -18,6 +18,7 @@ type Story = StoryObj<typeof meta>;
 
 export const TaskFormDialog = {
   args: {
+    label: 'Create Task',
     children: (
       <TaskForm>
         <Dialog.Close>

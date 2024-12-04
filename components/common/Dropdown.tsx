@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, DropdownMenu, Flex, Text } from '@radix-ui/themes';
+import { DropdownMenu, Flex, Text } from '@radix-ui/themes';
 import Image from 'next/image';
 import { useState } from 'react';
 
