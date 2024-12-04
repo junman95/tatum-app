@@ -84,4 +84,8 @@ types - 타입 정의
   - 유지보수성: 변경 사항이 특정 컴포넌트에만 영향을 미치도록 설계
 
 * 개선 아이디어
-  - 비주얼 테스트를 통한 뷰 로직 정상작동 확인.
+  - 비주얼 테스트를 통한 뷰 로직 정상작동 확인
+
+## 참고사항
+* 초기 세팅의 경우 직접 제작한 보일러 플레이트 기반으로 진행했으며, storybook - radix/ui 호환 이슈를 해결하여 제작
+  * [npx 설치가능한 nextjs15 기반 보일러 플레이트](https://github.com/junman95/jm-nextjs-boilerplate/blob/ts-storybook-radix/ui/README.md)
