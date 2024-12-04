@@ -1,4 +1,5 @@
 import Dropdown from '@/components/common/Dropdown';
+import SearchInput from '@/components/common/SearchInput';
 import CreationDialog from '@/components/create-dialog/CreationDialog';
 import TaskForm from '@/components/create-dialog/TaskForm';
 import ListTable from '@/components/list-view/ListTable';
@@ -20,11 +21,8 @@ export default async function Page() {
       className="relative  h-full w-full"
     >
       <Flex gap="5" className="relative">
-        <Dropdown
-          name="filterMenu"
-          options={['User Name', 'User Email', 'User Phone']}
-        />
-
+        <Dropdown name="filterMenu" options={['Task Name', 'Assignee']} />
+        <SearchInput name="searchTask" />
         <CreationDialog label="Create Task">
           <TaskForm>
             <Dialog.Close>

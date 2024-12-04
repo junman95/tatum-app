@@ -1,4 +1,5 @@
 import Dropdown from '@/components/common/Dropdown';
+import SearchInput from '@/components/common/SearchInput';
 import CreationDialog from '@/components/create-dialog/CreationDialog';
 import UserForm from '@/components/create-dialog/UserForm';
 import ListTable from '@/components/list-view/ListTable';
@@ -23,7 +24,7 @@ const page = async () => {
           name="filterMenu"
           options={['User Name', 'User Email', 'User Phone']}
         />
-
+        <SearchInput name="searchUser" />
         <CreationDialog label="Create User">
           <UserForm>
             <Dialog.Close>
